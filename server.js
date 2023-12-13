@@ -61,10 +61,13 @@ db.once('open', function () {
             message: () => "Please enter a valid quota",
         },
     },
+<<<<<<< HEAD
     price: {
       type: Number,
       required: [true],
     }
+=======
+>>>>>>> c99de41132f22edb63740e43994e3198f404c118
   })
 
   const locationSchema = mongoose.Schema({
@@ -99,6 +102,12 @@ db.once('open', function () {
   });
     
 })
+<<<<<<< HEAD
     
+=======
+
+
+
+>>>>>>> c99de41132f22edb63740e43994e3198f404c118
 // listen to port 3000
 const server = app.listen(3000);
