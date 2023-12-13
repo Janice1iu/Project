@@ -1,0 +1,338 @@
+Venue ID: 76810049
+Events:
+- Event ID: 154903
+  Title: Cantonese Opera Excerpts and Cantonese Operatic Songs Concert
+  Title: 妙倩樂韻粵曲會知音
+- Event ID: 154902
+  Title: Cantonese Operatic Songs Concert
+  Title: 粵曲唱聚會知音
+- Event ID: 154900
+  Title: Cantonese Operatic Songs Concert
+  Title: 鳳凰粵曲欣賞會
+- Event ID: 154901
+  Title: Little Star Children Choir Music Concert
+  Title: 星星兒童合唱團音樂會
+- Event ID: 155691
+  Title: Oldies Concert
+  Title: 中英文金曲情兩牽
+- Event ID: 155689
+  Title: Oldies Concert
+  Title: 夢‧舞台之珍惜今晚夜
+- Event ID: 155690
+  Title: Oldies Concert
+  Title: 好友樂聚金曲夜
+- Event ID: 155693
+  Title: Oldies Concert
+  Title: 屯門好友金曲演唱會
+- Event ID: 155692
+  Title: Oldies Concert
+  Title: 翩翩葉音樂坊音樂會
+- Event ID: 155694
+  Title: Oldies Concert
+  Title: 聖誕金曲匯演
+- Event ID: 154853
+  Title: Tuen Mun Town Hall Venue Partnership Scheme : "Rudolph Christmas Adventure Musical"&nbsp; by Pop Theatre&nbsp;
+  Title: 屯門大會堂場地伙伴計劃：普 劇場 合家歡音樂劇《Rudolph聖誕歷險記》
+- Event ID: 155695
+  Title: Variety Show
+  Title: 金曲聚千聲
+---
+Venue ID: 87110120
+Events:
+- Event ID: 151259
+  Title: Cantonese Opera Class by Hang Fei Music Centre
+  Title: 恆蜚樂坊主辦 - 粵曲班
+- Event ID: 151296
+  Title: Cantonese Opera Training Class - Presented by Melody Cantonese Opera Laboratory
+  Title: 鑫韻劇藝社主辦 - 平子喉工尺譜唱科班
+- Event ID: 151256
+  Title: Cantonese Operatic Song Workshop- Presented by Edelweiss Chinese Musical Art Workshop
+  Title: 真善美曲藝研習會主辦 - 粵曲研習班
+- Event ID: 151254
+  Title: Cantonese Operatic Songs Class by Sin Lok Music Art
+  Title: 仙樂曲藝社主辦 - 粵曲課程(仙樂粵曲推廣計劃)
+- Event ID: 151255
+  Title: Cantonese Operatic Songs Class by Sin Lok Music Art
+  Title: 仙樂曲藝社主辦 - 粵曲課程(仙樂粵曲推廣計劃)
+- Event ID: 151258
+  Title: Cantonese Operatic Songs Class by Tak Fook Opera House
+  Title: 德福樂苑主辦 - 粵曲班
+- Event ID: 151295
+  Title: Cantonese Operatic Songs Training Class - Presented by Ngai Ming Musical Association
+  Title: 藝銘樂苑曲藝班主辦 - 嚴振邦粵曲研習班
+- Event ID: 151257
+  Title: Cantonese Operatic Songs Training Class - Presented by Sin Fai Cantonese Opera Association
+  Title: 仙輝劇藝苑主辦 - 粵劇曲藝班
+- Event ID: 151298
+  Title: Cantonese Operatic Songs Training Class - Presented by Ying Ying Music Art
+  Title: 盈盈曲藝社主辦 - 葉慧芬粵曲班
+- Event ID: 151297
+  Title: Cantonese Operatic Songs Training Class - Presented by 駿輝粵藝社
+  Title: 駿輝粵藝社主辦 - 粵曲班
+- Event ID: 151284
+  Title: Hong Kong Shatin Chorus - Singing Class
+  Title: 香港沙田合唱團主辦 - 歌唱訓練班
+- Event ID: 151283
+  Title: Music Training Class - Presented by Hong Kong Post-Modern Orchestra Association
+  Title: 香港譜樂管弦樂協會主辦 - 樂器訓練班
+- Event ID: 151303
+  Title: Music Training Class - Presented by Yip's Children's Choir Limited
+  Title: 葉氏兒童合唱團有限公司主辦 - 幼兒啟蒙合唱班
+- Event ID: 151272
+  Title: 亞洲體藝學界朗誦比賽2023
+  Title: 亞洲體藝學界朗誦比賽2023
+---
+Venue ID: 7744
+Events:
+- Event ID: 155470
+  Title: “Monthly Meeting of Joyful Reading” of Reading Programme for Children and Youth – Dr. Science (Family and Senior Pri.)
+  Title: 兒童及青少年閱讀計劃 「月月讀書樂」月會 － 科學小博士 (家庭及高小組)
+- Event ID: 155467
+  Title: Book Display – Weather and Climate
+  Title: 書籍介紹 － 氣象萬千
+- Event ID: 155468
+  Title: Children’s Book Display – Travel around the World
+  Title: 兒童書籍介紹 － 環遊世界
+- Event ID: 155474
+  Title: Introduction to Library Catalogue/ Internet & Electronic Resource (Junior)
+  Title: 圖書館目錄/互聯網及電子資源簡介（兒童組）
+- Event ID: 155466
+  Title: Roving Book Exhibition of “Quality Reading Culture”
+  Title: 「優質閱讀文化」書籍巡迴展覽
+- Event ID: 155469
+  Title: Storytelling for Children (Cantonese)
+  Title: 兒童故事時間 (粵語)
+- Event ID: 155472
+  Title: Subject Talk Series on “Learn More about Dementia” – Understanding Dementia
+  Title: 「認識腦退化症」系列講座：腦退化症知多啲
+---
+Venue ID: 87510010
+Events:
+- Event ID: 155614
+  Title: "ADifficult Year"- The 52nd Hong Kong French Film Festival
+  Title: 《艱難歲月》─ 第52屆香港法國電影節
+- Event ID: 155626
+  Title: "AbbéPierre – A Century of Devotion"- The 52nd Hong Kong French Film Festival
+  Title: 《皮埃爾神父》─ 第52屆香港法國電影節
+- Event ID: 155622
+  Title: "Don'tLook Now: We're Being Shot At"- The 52nd Hong Kong French Film Festival
+  Title: 《橫衝直撞出重圍》─ 第52屆香港法國電影節
+- Event ID: 155620
+  Title: "Jeannedu Barry"- The 52nd Hong Kong French Film Festival
+  Title: 《戀戀山城》─ 第52屆香港法國電影節
+- Event ID: 155619
+  Title: "Jeannedu Barry"- The 52nd Hong Kong French Film Festival
+  Title: 《杜巴利伯爵夫人》─ 第52屆香港法國電影節
+- Event ID: 155621
+  Title: "Manonof the Spring"- The 52nd Hong Kong French Film Festival
+  Title: 《恩怨情天》─ 第52屆香港法國電影節
+- Event ID: 153337
+  Title: "Our Music Talents" Series: Saxophone Recital by Chemie Ching
+  Title: 「音樂顯才華」系列：程家慧色士風演奏會
+- Event ID: 153335
+  Title: "Our Music Talents" Series:Yangqin Recital by Yanki Ma
+  Title: 「音樂顯才華」系列︰馬詩恩揚琴演奏會
+- Event ID: 155624
+  Title: "RobotDreams"- The 52nd Hong Kong French Film Festival
+  Title: 《再見機器人》（暫譯）─ 第52屆香港法國電影節
+- Event ID: 155615
+  Title: "Suddenly"-The 52nd Hong Kong French Film Festival
+  Title: 《瞬間只得我倆》─ 第52屆香港法國電影節
+- Event ID: 155625
+  Title: "Taxi"-The 52nd Hong Kong French Film Festival
+  Title: 《的士速逮》─ 第52屆香港法國電影節
+- Event ID: 155617
+  Title: "TheBlack Pharaoh, the Savage and the Princes"- The 52nd Hong Kong French FilmFestival
+  Title: 《法老、野人與公主》─ 第52屆香港法國電影節
+- Event ID: 155623
+  Title: "TheThree Musketeers: D'artagnan"- The 52nd Hong Kong French Film Festival
+  Title: 《三劍客之達太安》─ 第52屆香港法國電影節
+- Event ID: 155017
+  Title: “City Hall Virtuosi” Series: Guzheng Recital by Wan Xing&nbsp;
+  Title: 「大會堂樂萃」系列：「聲影墨色」──萬幸古箏演奏會
+- Event ID: 154221
+  Title: (Concert)
+  Title: 你是我所有的回憶 香港愛樂合唱團53周年音樂會
+- Event ID: 154222
+  Title: (Concert)
+  Title: 喜迎環宇十五載 樂聚弦友滿香庭 陳麗萍老師學生音樂會
+- Event ID: 154224
+  Title: (Concert)
+  Title: 慶祝中華人民共和國成立74周年系列 ─ 愛我中華
+- Event ID: 154225
+  Title: 64th Anniversary Concert
+  Title: 草田合唱團64周年音樂會
+- Event ID: 155006
+  Title: 6th Hong Kong International Egyptian Dance Festival 2023 – The Dance of Joy – Fundraising Gala
+  Title: 第六屆香港國際埃及舞蹈節2023 ─ 眾樂之舞 ─ 慈善籌款
+- Event ID: 154976
+  Title: Beare’s Premiere Music Festival 2024 - Musical Fairy Tales: Peter and the Wolf
+  Title: 比爾斯飛躍演奏音樂節2024 - 音樂童話: 彼得與狼
+- Event ID: 154988
+  Title: Concert of HK Composers' Works
+  Title: 香港作曲家作品音樂會
+- Event ID: 154989
+  Title: Harp Kaleidoscope 2 – Dan Yu with Friends and Students
+  Title: 豎琴萬花筒 2~于丹師生 X 友人音樂會
+- Event ID: 155002
+  Title: INTERPLAY
+  Title: （音樂會）
+- Event ID: 154223
+  Title: Jackey Wu Drama Life &amp; Life Drama - A Baritone's Vocal Recital
+  Title: 戲劇人生之男中音吳俊傑獨唱會
+- Event ID: 154987
+  Title: Jazz Composers Academy Showcase
+  Title: 爵士音樂創作人培養計劃作品演出
+- Event ID: 155667
+  Title: Musicus Fest 2023—Next Generation Virtuosi
+  Title: 2023 樂•誼國際音樂節—新銳音樂家演奏會
+- Event ID: 154220
+  Title: Theatre “Moscow Express”&nbsp; (In Cantonese with Chinese and English surtitles)
+  Title: 戲劇「從金鐘到莫斯科」（粵語演出，附中、英文字幕）
+- Event ID: 154219
+  Title: Theatre “Moscow Express”&nbsp;&nbsp; (In Cantonese with Chinese and English surtitles)
+  Title: 戲劇「從金鐘到莫斯科」（粵語演出，附中、英文字幕）
+---
+Venue ID: 56
+Events:
+- Event ID: 155065
+  Title: “Monthly Meeting of Joyful Reading” of Reading Programme for Children and Youth – Enjoying Comics (Senior Primary)
+  Title: 兒童及青少年閱讀計劃 「月月讀書樂」月會 － 漫畫樂 (高小組)
+- Event ID: 155062
+  Title: Book Display – Exploring China
+  Title: 書籍介紹 － 漫遊中國
+- Event ID: 155063
+  Title: Children’s Book Display – Science Wonders
+  Title: 兒童書籍介紹 － 奇趣科學館
+- Event ID: 155061
+  Title: Green @ the Eastern District Thematic Exhibition
+  Title: 綠 @東區專題展覽
+- Event ID: 155068
+  Title: Introduction to Library Catalogue/ Internet & Electronic Resources (Adult)
+  Title: 圖書館目錄∕互聯網及電子資源簡介（成人組）
+- Event ID: 155069
+  Title: Introduction to Library Catalogue/ Internet & Electronic Resources (Junior)
+  Title: 圖書館目錄∕互聯網及電子資源簡介（兒童組）
+- Event ID: 155060
+  Title: Mini Exhibition on “Smart Use of Communications Services”
+  Title: 「做個精明通訊服務用家」小型展覽
+- Event ID: 155067
+  Title: Parent-child Workshop: Heart-warming Stories
+  Title: 親子故事劇場：溫情故事
+- Event ID: 155064
+  Title: Storytelling for Children
+  Title: 兒童故事時間
+---
+Venue ID: 87510494
+Events:
+- Event ID: 155014
+  Title: (Chinese Painting and Calligraphy Exhibition)
+  Title: 翰苑傾情書畫會主辦四人聯展
+- Event ID: 155015
+  Title: Art of Tina Fong
+  Title: 方懷貞書畫展
+- Event ID: 155016
+  Title: Arts for Heart 2023
+  Title: 藝術 ‧ 義行2023
+- Event ID: 155019
+  Title: Cheung Yuet Chun Individual Exhibition of Calligraphy and Painting
+  Title: 水墨雲煙 ─ 張月珍書畫回顧個人展
+- Event ID: 155013
+  Title: Chinese Antique Porcelain Exhibition
+  Title: 中國古董瓷器鑑賞展覽
+- Event ID: 154230
+  Title: Exhibition of Chinese Calligraphy Works of Christian Words
+  Title: 聖言書藝社第三屆會員書法作品展 2023（墨言筆語．重新得力）
+- Event ID: 155018
+  Title: Mu Feng Art Club Fifth Exhibition
+  Title: 沐風畫會第五屆畫展
+- Event ID: 155713
+  Title: Shanghai Style Painting Exhibition
+  Title: 海派畫會展
+- Event ID: 154231
+  Title: The Geneart Society Painting Exhibition
+  Title: 傳藝學會畫展
+- Event ID: 154229
+  Title: The YI SU Association Exhibition
+  Title: 一粟書畫展2023
+---
+Venue ID: 93
+Events:
+- Event ID: 155261
+  Title: Book Display – Exploring Science
+  Title: 書籍介紹 － 科學探索
+- Event ID: 155262
+  Title: Children’s Book Display – Bedtime Stories
+  Title: 兒童書籍介紹 － 睡前小故事
+- Event ID: 155265
+  Title: Introduction to Library Catalogue / Internet & Electronic Resources (Junior)
+  Title: 圖書館目錄∕互聯網及電子資源簡介（兒童組）
+- Event ID: 155263
+  Title: Storytelling for Children
+  Title: 兒童故事時間
+---
+Venue ID: 87810779
+Events:
+- Event ID: 155661
+  Title: Chinese Calligraphy Class
+  Title: 書法研習班
+- Event ID: 149611
+  Title: Chinese Calligraphy Class
+  Title: 書法研習班
+- Event ID: 155662
+  Title: Oil Painting Class by Arnold Yu's Art Club
+  Title: 活在畫中主辦 - 油畫工作坊
+- Event ID: 155701
+  Title: Oil Painting Workshop by Arnold Yu's Art Club
+  Title: 活在畫中主辦 - 油畫工作坊
+- Event ID: 150292
+  Title: Painting Class by Arnold Yu's Art Club
+  Title: 活在畫中主辦 - 繪畫工作坊
+- Event ID: 155658
+  Title: Philatelic
+  Title: 集郵樂
+- Event ID: 149771
+  Title: Philatelic
+  Title: 集郵樂
+- Event ID: 149692
+  Title: Suyichuan Chinese Calligraphy 2023
+  Title: 素書房中文書法傳習
+- Event ID: 154845
+  Title: Suyichuan Chinese Calligraphy 2024
+  Title: 素書房中文書法傳習
+---
+Venue ID: 6824
+Events:
+- Event ID: 154859
+  Title: FWD Insurance 10th Anniversary Presents : Jacky Cheung 60+ Concert Tour Hong Kong
+  Title: 富衛保險10周年呈獻 張學友60+巡迴演唱會 香港站
+- Event ID: 155030
+  Title: FWD Insurance 10th Anniversary Presents : Jacky Cheung 60+ Concert Tour Hong Kong (Additional Performances)
+  Title: FWD 富衛保險10周年呈獻 張學友60+巡迴演唱會 香港站 (加場)
+- Event ID: 154198
+  Title: Prudential Presents Leon Live 2023
+  Title: 保誠保險呈獻《Leon黎明紅館演唱會2023》
+---
+Venue ID: 50110015
+Events:
+- Event ID: 154990
+  Title: “Tan Dun WE-Festival”: Tan Dun: BACH Rock &amp; Hanggai - When BACH meets GENGHIS KHAN
+  Title: 「譚盾WE – 音樂節」：《譚盾：巴赫搖滾與杭蓋 – 當巴赫遇見成吉思汗》
+- Event ID: 154810
+  Title: Music Theatre - Gu Long's Death Duel
+  Title: 古龍《三少爺的劍》音樂話劇
+- Event ID: 155675
+  Title: National Ballet of China Red Detachment of Women
+  Title: 中央芭蕾舞團《紅色娘子軍》
+- Event ID: 155676
+  Title: National Ballet of China Swan Lake
+  Title: 中央芭蕾舞團《天鵝湖》
+- Event ID: 153176
+  Title: New Vision Arts Festival 2023 Fringe Activities: "The Secret of Water on Stage" Backstage Tour
+  Title: 新視野藝術節2023延伸活動：「水舞台的奧秘」後台導賞
+- Event ID: 153194
+  Title: New Vision Arts Festival 2023: "INK" by Dimitris Papaioannou (Greece)
+  Title: 新視野藝術節2023：迪米特里斯．帕派約安努 (希臘) 《INK》
+- Event ID: 154974
+  Title: The Nutcracker
+  Title: 胡桃夾子
