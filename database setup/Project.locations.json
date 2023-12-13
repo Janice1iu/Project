@@ -12,4 +12,49 @@
     ]
   },
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579d6e238b01319dfc255ae"
+  },
+  "locId": 7744,
+  "name": "Yuen Chau Kok Public Library",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.37957,
+      114.20452
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579de61fda3eeec704b2325"
+  },
+  "locId": 87510010,
+  "name": "Hong Kong City Hall (Theatre)",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.282279,
+      114.161545
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579e4227d5c9f57d8b7dcd3"
+  },
+  "locId": 36310036,
+  "name": "Sha Tin Town Hall (Cultural Activities Hall)",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.38136,
+      114.1899
+    ]
+  },
+  "__v": 0
 }]

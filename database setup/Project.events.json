@@ -1,0 +1,168 @@
+[{
+  "_id": {
+    "$oid": "6579d0b315f295478b1b5a1d"
+  },
+  "eventId": 151259,
+  "title": "Cantonese Opera Class by Hang Fei Music Centre",
+  "loc": {
+    "$oid": "6579c6f6049175f2362a6252"
+  },
+  "startDateTime": {
+    "$date": "2023-07-06T04:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-28T06:00:00.000Z"
+  },
+  "recurringPattern": "Every Thu",
+  "description": "For details, contact 6460 2161",
+  "presenter": "Hang Fei Music Centre",
+  "price": "Admission by Enrolment",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579db7818abe3e35a5f5212"
+  },
+  "eventId": 156280,
+  "title": "Storytelling for Children (Cantonese)",
+  "loc": {
+    "$oid": "6579d6e238b01319dfc255ae"
+  },
+  "startDateTime": {
+    "$date": "2023-12-02T06:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-02T07:00:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "Period: Dec 2023",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free Admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579dbaf5c84a448bd4af39e"
+  },
+  "eventId": 156281,
+  "title": "“Monthly Meeting of Joyful Reading” of Reading Programme for Children and Youth – The Nature (Senior Sec.)",
+  "loc": {
+    "$oid": "6579d6e238b01319dfc255ae"
+  },
+  "startDateTime": {
+    "$date": "2023-12-19T08:30:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-19T09:30:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, please visit http://www.hkpl.gov.hk/rp",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free Admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579dd760c6d3a6ecaf1243e"
+  },
+  "eventId": 156282,
+  "title": "Introduction to Library Catalogue/ Internet & Electronic Resource (Adult)",
+  "loc": {
+    "$oid": "6579d6e238b01319dfc255ae"
+  },
+  "startDateTime": {
+    "$date": "2023-12-06T02:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-06T03:30:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, contact 2324 2700",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free Admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579e02ffd038e7291cd4388"
+  },
+  "eventId": 155861,
+  "title": "Opera Sing & Shine",
+  "loc": {
+    "$oid": "6579de61fda3eeec704b2325"
+  },
+  "startDateTime": {
+    "$date": "2024-01-11T11:30:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-11T14:00:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For ticket: http://www.lcsd.gov.hk/en/ticket/index.html",
+  "presenter": "City Opera",
+  "price": "$200, $300",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579e1ed4e8ac6d857c6ff63"
+  },
+  "eventId": 155862,
+  "title": "Undine's Whispers Flute Recital by Matthew Wu",
+  "loc": {
+    "$oid": "6579de61fda3eeec704b2325"
+  },
+  "startDateTime": {
+    "$date": "2024-01-13T12:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-13T14:00:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details: 2887 0330",
+  "presenter": "Hong Kong Flute Association",
+  "price": "$150, $220",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579e2d5d8975acf7ae17478"
+  },
+  "eventId": 155017,
+  "title": "City Hall Virtuosi Series: Guzheng Recital by Wan Xing",
+  "loc": {
+    "$oid": "6579de61fda3eeec704b2325"
+  },
+  "startDateTime": {
+    "$date": "2024-01-31T12:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-31T13:30:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "Programme includes The Lotus Rising from the Water, La Blancheur, Blue Heaven Overture and many more. There will also be a new composition for Zheng and Harp by Wan Xing as well as the thematic Soundscape.",
+  "presenter": "Leisure and Cultural Services Department",
+  "price": "$180, $220",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579e51571f469c9afe40e77"
+  },
+  "eventId": 155799,
+  "title": "Adventure Harmonica Band 18th Anniversary Concert",
+  "loc": {
+    "$oid": "6579e4227d5c9f57d8b7dcd3"
+  },
+  "startDateTime": {
+    "$date": "2024-01-21T11:30:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-21T13:15:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "Only for age 4 or above",
+  "presenter": "Adventure Harmonica Music Centre",
+  "price": "$150",
+  "__v": 0
+}]

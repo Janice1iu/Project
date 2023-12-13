@@ -216,31 +216,6 @@ db.once('open', function () {
     .catch((error) => {
         console.log("Failed to save event:", error);
     });
-  
-  /*
-  // Create a new Event document 
-  let newEvent = new Event({
-    eventId: 156280,
-    title: "Storytelling for Children (Cantonese)",
-    loc: '6579d6e238b01319dfc255ae', // Assign the location document's object id
-    startDateTime: new Date(moment.tz('2023-12-02T14:00:00', hkTimeZone).toDate()), 
-    endDateTime: new Date(moment.tz('2023-12-02T15:00:00', hkTimeZone).toDate()), 
-    recurringPattern: "",
-    description: "Period: Dec 2023",
-    presenter: "Hong Kong Public Libraries (LCSD)",
-    price: "Free Admission",
-  }); 
-
-  // Saving this new event to database
-  newEvent
-    .save()
-    .then(() => {
-        console.log("A new event created:", newEvent);
-    })
-    .catch((error) => {
-        console.log("Failed to save event:", error);
-    });
-  */
 
 
   // handle ALL requests with Hello World
