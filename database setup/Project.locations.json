@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "6579c6f6049175f2362a6252"
+  },
+  "locId": 87110120,
+  "name": "Kwai Tsing Theatre (Lecture Room)",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.35665,
+      114.12623
+    ]
+  },
+  "__v": 0
+}]

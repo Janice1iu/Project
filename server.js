@@ -31,7 +31,7 @@ app.use(cors());
 app.use(express.json());
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-mongoose.connect('mongodb://127.0.0.1:27017/Project'); // put your own database link here
+mongoose.connect('mongodb://127.0.0.1:27017/Project'); // database link here
 
 const db = mongoose.connection;
 // Upon connection failure
@@ -43,32 +43,46 @@ db.once('open', function () {
   // Schema and Model - Event, Location
   const eventSchema = mongoose.Schema({
     eventId: {
-        type: Number,
-        required: [true, "EventId is required"],
-        unique: [true, "EventId is unique"],
+      type: Number,
+      required: [true, "EventId is required"],
+      unique: [true, "EventId must be unique"],
     },
-    name: {
-        type: String,
-        required: [true, "Name is required"],
+    title: {
+      type: String,
+      required: [true, "Title is required"],
     },
     loc: { type: Schema.Types.ObjectId, ref: 'Location' },
-    quota: {
-        type: Number,
-        validate: {
-            validator: function (value) {
-                return value > 0;
-            },
-            message: () => "Please enter a valid quota",
-        },
+    dateTime: {
+      type: Date,
+      required: [true, "DateTime is required"],
     },
-<<<<<<< HEAD
+    /* 
+  startDateTime: {
+    type: Date,
+    required: [true, "StartDateTime is required"],
+  },
+  endDateTime: {
+    type: Date,
+    required: [true, "EndDateTime is required"],
+  },
+  recurringPattern: {
+    type: String,
+    default: "", // Optional
+  }, 
+  */
+    description: {
+      type: String,
+      default: "", // Optional, set a default empty string if description is not provided
+    },
+    presenter: {
+      type: String,
+      required: [true, "Presenter is required"],
+    },
     price: {
-      type: Number,
-      required: [true],
-    }
-=======
->>>>>>> c99de41132f22edb63740e43994e3198f404c118
-  })
+      type: String,
+      required: [true, "Price is required"],
+    },
+  });
 
   const locationSchema = mongoose.Schema({
     locId: {
@@ -96,18 +110,57 @@ db.once('open', function () {
   const Event = mongoose.model('Event', eventSchema);
   const Location = mongoose.model('Location', locationSchema);
 
+  /*
+  // Create a new Location document
+  let newLocation = new Location({
+    locId: 87110120,
+    name: "Kwai Tsing Theatre (Lecture Room)",
+    coordinates: {
+      type: "Point",
+      coordinates: [22.35665, 114.12623],
+    },
+  });
+
+  // Saving this new loaction to database
+  newLocation
+    .save()
+    .then(() => {
+      console.log("A new location created:", newLocation);
+    })
+    .catch((error) => {
+      console.log("failed to save location:", error);
+    }); 
+    
+    */
+
+  // Create a new Event document 
+  let newEvent = new Event({
+      eventId: 151259,
+      title: "Cantonese Opera Class by Hang Fei Music Centre",
+      loc: '6579c6f6049175f2362a6252', // Assign the location document's object id
+      dateTime: new Date("2023-07-06T12:00:00"), 
+      description: "",
+      presenter: "Hang Fei Music Centre",
+      price: "Admission by Enrolment",
+  }); 
+
+  // Saving this new event to database
+  newEvent
+    .save()
+    .then(() => {
+        console.log("A new event created:", newEvent);
+    })
+    .catch((error) => {
+        console.log("Failed to save event:", error);
+    });
+
+
   // handle ALL requests with Hello World
   app.all('/*', (req, res) => {
     res.send('Hello World!');
   });
     
 })
-<<<<<<< HEAD
     
-=======
-
-
-
->>>>>>> c99de41132f22edb63740e43994e3198f404c118
 // listen to port 3000
 const server = app.listen(3000);
