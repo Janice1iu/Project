@@ -61,6 +61,10 @@ db.once('open', function () {
             message: () => "Please enter a valid quota",
         },
     },
+    price: {
+      type: Number,
+      required: [true],
+    }
   })
 
   const locationSchema = mongoose.Schema({
