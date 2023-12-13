@@ -26,9 +26,14 @@ Date : 10/12/2023 */
 
 const express = require('express');
 const app = express();
+
 const cors = require('cors');
 app.use(cors());
 app.use(express.json());
+
+const moment = require('moment-timezone');
+const hkTimeZone = 'Asia/Hong_Kong';
+
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 mongoose.connect('mongodb://127.0.0.1:27017/Project'); // database link here
@@ -52,24 +57,18 @@ db.once('open', function () {
       required: [true, "Title is required"],
     },
     loc: { type: Schema.Types.ObjectId, ref: 'Location' },
-    dateTime: {
+    startDateTime: {
       type: Date,
-      required: [true, "DateTime is required"],
+      required: [true, "StartDateTime is required"],
     },
-    /* 
-  startDateTime: {
-    type: Date,
-    required: [true, "StartDateTime is required"],
-  },
-  endDateTime: {
-    type: Date,
-    required: [true, "EndDateTime is required"],
-  },
-  recurringPattern: {
-    type: String,
-    default: "", // Optional
-  }, 
-  */
+    endDateTime: {
+      type: Date,
+      required: [true, "EndDateTime is required"],
+    },
+    recurringPattern: {
+      type: String,
+      default: "", // Optional
+    }, 
     description: {
       type: String,
       default: "", // Optional, set a default empty string if description is not provided
@@ -130,18 +129,82 @@ db.once('open', function () {
     .catch((error) => {
       console.log("failed to save location:", error);
     }); 
-    
-    */
+  */
+  /*
+   // Create a new Location document
+   let twoLocation = new Location({
+    locId: 7744,
+    name: "Yuen Chau Kok Public Library",
+    coordinates: {
+      type: "Point",
+      coordinates: [22.37957, 114.20452],
+    },
+  });
 
+  // Saving this new loaction to database
+  twoLocation
+    .save()
+    .then(() => {
+      console.log("A new location created:", twoLocation);
+    })
+    .catch((error) => {
+      console.log("failed to save location:", error);
+    }); 
+  */  
+  /*
+   // Create a new Location document
+   let threeLocation = new Location({
+    locId: 87510010,
+    name: "Hong Kong City Hall (Theatre)",
+    coordinates: {
+      type: "Point",
+      coordinates: [22.282279, 114.161545],
+    },
+  });
+
+  // Saving this new loaction to database
+  threeLocation
+    .save()
+    .then(() => {
+      console.log("A new location created:", threeLocation);
+    })
+    .catch((error) => {
+      console.log("failed to save location:", error);
+    }); 
+  */
+  /*
+  // Create a new Location document
+  let fourLocation = new Location({
+    locId: 36310036,
+    name: "Sha Tin Town Hall (Cultural Activities Hall)",
+    coordinates: {
+      type: "Point",
+      coordinates: [22.38136, 114.18990],
+    },
+  });
+
+  // Saving this new loaction to database
+  fourLocation
+    .save()
+    .then(() => {
+      console.log("A new location created:", fourLocation);
+    })
+    .catch((error) => {
+      console.log("failed to save location:", error);
+    }); 
+  */
+  
   // Create a new Event document 
   let newEvent = new Event({
-      eventId: 151259,
-      title: "Cantonese Opera Class by Hang Fei Music Centre",
-      loc: '6579c6f6049175f2362a6252', // Assign the location document's object id
-      dateTime: new Date("2023-07-06T12:00:00"), 
-      description: "",
-      presenter: "Hang Fei Music Centre",
-      price: "Admission by Enrolment",
+      eventId: 155799,
+      title: "Adventure Harmonica Band 18th Anniversary Concert",
+      loc: '6579e4227d5c9f57d8b7dcd3', // Assign the location document's object id
+      startDateTime: new Date(moment.tz('2024-01-21T19:30:00', hkTimeZone).toDate()), 
+      endDateTime: new Date(moment.tz('2024-01-21T21:15:00', hkTimeZone).toDate()), 
+      recurringPattern: "",
+      description: "Only for age 4 or above",
+      presenter: "Adventure Harmonica Music Centre",
+      price: "$150",
   }); 
 
   // Saving this new event to database
@@ -153,6 +216,31 @@ db.once('open', function () {
     .catch((error) => {
         console.log("Failed to save event:", error);
     });
+  
+  /*
+  // Create a new Event document 
+  let newEvent = new Event({
+    eventId: 156280,
+    title: "Storytelling for Children (Cantonese)",
+    loc: '6579d6e238b01319dfc255ae', // Assign the location document's object id
+    startDateTime: new Date(moment.tz('2023-12-02T14:00:00', hkTimeZone).toDate()), 
+    endDateTime: new Date(moment.tz('2023-12-02T15:00:00', hkTimeZone).toDate()), 
+    recurringPattern: "",
+    description: "Period: Dec 2023",
+    presenter: "Hong Kong Public Libraries (LCSD)",
+    price: "Free Admission",
+  }); 
+
+  // Saving this new event to database
+  newEvent
+    .save()
+    .then(() => {
+        console.log("A new event created:", newEvent);
+    })
+    .catch((error) => {
+        console.log("Failed to save event:", error);
+    });
+  */
 
 
   // handle ALL requests with Hello World
