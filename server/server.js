@@ -449,6 +449,51 @@ db.once('open', function () {
       });
   });
 
+  // Handle submission of user comments
+  app.post('/lo/:locationID/comments', (req, res) => {
+    const locationID = req.params.locationID;
+    const { username, content } = req.body;
+  
+    // Find the specified location in the database
+    Location.findOne({ locId: locationID })
+      .then(existingLocation => {
+        if (!existingLocation) {
+          return res.status(404).send('Location not found');
+        }
+  
+        // Find the user by username
+        User.findOne({ username })
+          .then(existingUser => {
+            if (!existingUser) {
+              return res.status(404).send('User not found');
+            }
+  
+            // Create a new comment document
+            const newComment = new Comment({
+              user: existingUser._id,
+              location: existingLocation._id,
+              content,
+              createdAt: new Date(),
+            });
+  
+            // Save the comment to the database
+            newComment.save()
+              .then(savedComment => {
+                res.status(201).json(savedComment);
+              })
+              .catch(error => {
+                console.error('Error saving comment:', error);
+              });
+          })
+          .catch(error => {
+            console.error('Error finding user:', error);
+          });
+      })
+      .catch(error => {
+        console.error('Error finding location:', error);
+      });
+  });
+  
 
     // handle login requests 
     // Both user and admin would login thru this endpoint
@@ -481,7 +526,6 @@ db.once('open', function () {
         })
 
     })
-
 
 /*
   Handle Admin Event Creation, part of the CRUD requirement
