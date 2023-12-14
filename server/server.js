@@ -27,16 +27,51 @@ Date : 10/12/2023 */
 const express = require('express');
 const app = express();
 
+
 const cors = require('cors');
 app.use(cors());
 app.use(express.json());
-
 const moment = require('moment-timezone');
 const hkTimeZone = 'Asia/Hong_Kong';
 
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 mongoose.connect('mongodb://127.0.0.1:27017/Project'); // database link here
+
+const rs = require('jsrsasign');
+const rsu = require('jsrsasign-util');
+
+function JWTGenenation(){
+    // Header
+    var oHeader = {alg: 'HS256', typ: 'JWT'};
+    // Payload
+    var oPayload = {};
+    var tNow = rs.KJUR.jws.IntDate.get('now');
+    // expire after 10 min
+    var tEnd = rs.KJUR.jws.IntDate.get(tNow + 10 * 60);
+    oPayload.nbf = tNow;
+    oPayload.iat = tNow;
+    oPayload.exp = tEnd;
+    // Sign JWT, password=pAS$W0rD
+    var sHeader = JSON.stringify(oHeader);
+    var sPayload = JSON.stringify(oPayload);
+    var sJWT = rs.KJUR.jws.JWS.sign("HS256", sHeader, sPayload, "pAS$W0rD");
+    return sJWT
+}
+
+function JWTVerification(sJWT){
+    let tNow = rs.KJUR.jws.IntDate.get('now');
+    let isValid =  rs.KJUR.jws.JWS.verifyJWT(sJWT, "pAS$W0rD", {alg: ["HS256"], verifyAt: tNow});
+    return isValid;
+}
+
+function JWTRenew(sJWT){
+    if(JWTVerification(sJWT)){
+        return JWTGenenation();
+    }else{
+        return null
+    }
+}
 
 const db = mongoose.connection;
 // Upon connection failure
@@ -520,7 +555,8 @@ db.once('open', function () {
                 // can check statuscode === 200 or json().valid
                 res.json({
                     'valid': true,
-                    'isAdmin': data.isAdmin
+                    'isAdmin': data.isAdmin,
+                    'JWT': JWTGenenation()
                 }).send()
             }
         })
@@ -544,6 +580,11 @@ db.once('open', function () {
   }
 */
     app.post('/newEvent', (req, res) => {
+        const sJWT = req.body.sJWT
+        if(!JWTVerification(sJWT)){
+            res.status(403).send('JWT expired')
+        }
+
         const title = req.body.title
         const locId = req.body.locId
         // the datetime conversion and format are specified by the database schema
@@ -699,7 +740,7 @@ db.once('open', function () {
         isAdmin: boolean
     }
     */
-    app.post('updateUser', (req, res) => {
+    app.post('/updateUser', (req, res) => {
         const oldUsername = req.body.oldUsername
         const username = req.body.username
         const password = req.body.password
@@ -728,7 +769,7 @@ db.once('open', function () {
         username: string,
     }
     */
-    app.post('deleteUSer', (req, res) => {
+    app.post('/deleteUSer', (req, res) => {
         const username = req.body.username
         User.findOneAndDelete({username: {$eq: username}}).then((data) => {
             if(data === null){
@@ -738,6 +779,16 @@ db.once('open', function () {
             }
         })
 
+    })
+
+    app.post('/renewJWT', (req, res) => {
+        let sJWT = req.body.sJWT
+        let sNewJWT = JWTRenew(sJWT)
+        if(sNewJWT){
+            res.json({"sJWT": sNewJWT}).send('ok')
+        }else{
+            res.status(403).send('JWT expired')
+        }
     })
 
 /*app.get('/lo/:locationID', async (req, res) => {
