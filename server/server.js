@@ -379,13 +379,7 @@ db.once('open', function () {
     }
   });
 
-
-  // Handle ALL requests with Hello World
-  app.all('/*', (req, res) => {
-    res.send('Hello World!');
-  });
-
-//   handle login requests
+  // Handle login requests
   app.post('/login', (req, res) => {
     const user = req.body.user;
     const password = req.body.password;
@@ -408,6 +402,12 @@ db.once('open', function () {
     })
 
   })
+
+  // Handle ALL requests with Hello World
+  app.all('/*', (req, res) => {
+    res.send('Hello World!');
+  });
+
 })
 
 
