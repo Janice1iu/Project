@@ -288,9 +288,29 @@ db.once('open', function () {
       res.json(locationTableData);
     } catch (error) {
       console.error('Error fetching locations:', error);
-      res.status(500).json({ error: 'Failed to fetch locations' });
     }
   });
+
+  // Fetch locations with specific keywords in name field
+  app.get('/keywords', (req, res) => {
+    const { keywords } = req.query;
+    const regex = new RegExp(keywords, 'i');
+  
+    Location.find({
+      $or: [
+        { name: regex },
+        // Add other fields to search if needed
+      ],
+    })
+      .exec()
+      .then((filteredLocations) => {
+        res.json(filteredLocations);
+      })
+      .catch((error) => {
+        console.error('Error handling search:', error);
+      });
+  });
+
 
   // handle ALL requests with Hello World
   app.all('/*', (req, res) => {
