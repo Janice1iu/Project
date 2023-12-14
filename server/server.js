@@ -294,7 +294,7 @@ db.once('open', function () {
   // Fetch locations with specific keywords in name field
   app.get('/keywords', (req, res) => {
     const { keywords } = req.query;
-    const regex = new RegExp(keywords, 'i');
+    const regex = new RegExp(keywords, 'i'); // case-insensitive 
   
     Location.find({
       $or: [
@@ -310,7 +310,6 @@ db.once('open', function () {
         console.error('Error handling search:', error);
       });
   });
-
 
   // handle ALL requests with Hello World
   app.all('/*', (req, res) => {

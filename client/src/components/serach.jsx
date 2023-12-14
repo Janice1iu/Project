@@ -1,3 +1,4 @@
+/* This is for testing purpose, I replaced this code with Daisy's search.jsx, this alone work (need overall implementation)*/
 import React, { useState } from "react";
 import "./about.css";
 import { FaSearch } from "react-icons/fa";
@@ -43,3 +44,4 @@ const Search = () => {
     </div>
   );
 };
+
