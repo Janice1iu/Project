@@ -271,24 +271,67 @@ db.once('open', function () {
     */
 
   // Fetch all locations: GET
-  app.get('/lo', async (req, res) => {
-    try {
-      // Retrieve all locations from the database
-      const locations = await Location.find();
-
-      // Prepare the location table data
-      const locationTableData = locations.map((location) => ({
-        name: location.name,
-        link: `/lo/${location._id}`,
-        eventCount: 0, // Placeholder for event count, to be updated later
-      }));
-
-      // Send the location table data as the response
-      res.json(locationTableData);
-    } catch (error) {
-      console.error('Error fetching locations:', error);
-    }
+  app.get('/lo', (req, res) => {
+    Location.find()
+      .then((locations) => {
+        // Prepare the location table data
+        const locationTableData = locations.map((location) => ({
+          name: location.name,
+          link: `http://localhost:3000/lo/${location.locId}`,
+          eventCount: 0, // Placeholder for event count, to be updated later
+          locationId: location._id, // Store the location's Object ID for reference
+        }));
+  
+        // Fetch the event count for each location
+        const eventCountPromises = locationTableData.map((location) =>
+          Event.countDocuments({ location: location.locationId })
+        );
+  
+        // Resolve all event count promises
+        Promise.all(eventCountPromises)
+          .then((eventCounts) => {
+            // Update the event count for each location
+            eventCounts.forEach((eventCount, index) => {
+              locationTableData[index].eventCount = eventCount;
+            });
+  
+            // Send the location table data as the response
+            res.send(`
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Link</th>
+                    <th>Event Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${locationTableData
+                    .map(
+                      (location) => `
+                      <tr>
+                        <td>${location.name}</td>
+                        <td><a href="${location.link}">${location.link}</a></td>
+                        <td>${location.eventCount}</td>
+                      </tr>
+                    `
+                    )
+                    .join('')}
+                </tbody>
+              </table>
+            `);
+          })
+          .catch((error) => {
+            console.error('Error fetching event counts:', error);
+            res.status(500).send('Internal Server Error');
+          });
+      })
+      .catch((error) => {
+        console.error('Error fetching locations:', error);
+        res.status(500).send('Internal Server Error');
+      });
   });
+  
 
   // Fetch locations with specific keywords in name field 
   app.get('/keywords', (req, res) => {
