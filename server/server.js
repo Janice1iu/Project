@@ -306,6 +306,8 @@ db.once('open', function () {
     */
 
   // Fetch all locations: GET
+  /* Client side implementation required: 
+  table of all locations */
   app.get('/lo', (req, res) => {
     Location.find()
       .then((locations) => {
@@ -366,7 +368,7 @@ db.once('open', function () {
         console.error('Error fetching locations:', error);
       });
   });
-  
+ 
   // Fetch locations with specific keywords in name field
   app.get('/keywords', (req, res) => {
     const { keywords } = req.query;
@@ -531,7 +533,51 @@ db.once('open', function () {
         console.error('Error finding location:', error);
       });
   });
-
+  
+  // Fetch user's favourite locations
+  app.get('/favourite', (req, res) => {
+    const username = "monty_python";
+  
+    User.findOne({ username })
+      .exec()
+      .then(user => {
+        if (!user) {
+          return res.status(404).send('User not found');
+        }
+  
+        return UserAccount.findOne({ user: user._id })
+          .populate('favoriteLocations')
+          .exec();
+      })
+      .then(userAccount => {
+        if (!userAccount) {
+          return res.status(404).send('User account not found');
+        }
+  
+        const favoriteLocations = userAccount.favoriteLocations;
+  
+        const locationPromises = favoriteLocations.map(location => {
+          return Event.countDocuments({ loc: location._id })
+            .exec()
+            .then(eventCount => {
+              return {
+                name: location.name,
+                link: `localhost:3000/lo/${location.locId}`,
+                eventCount: eventCount,
+              };
+            });
+        });
+  
+        return Promise.all(locationPromises);
+      })
+      .then(locationDetails => {
+        res.json(locationDetails);
+      })
+      .catch(err => {
+        console.error('Error finding user or user account:', err);
+      });
+  });
+  
 
     // handle login requests 
     // Both user and admin would login thru this endpoint
