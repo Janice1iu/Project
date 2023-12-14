@@ -368,12 +368,13 @@ db.once('open', function () {
         console.error('Error fetching locations:', error);
       });
   });
- 
+
   // Fetch locations with specific keywords in name field
-  app.get('/keywords', (req, res) => {
-    const { keywords } = req.query;
-    const regex = new RegExp(keywords, 'i'); // case-insensitive
-  
+  app.post("/keywords", (req, res) => {
+    const keywords = req.body.search;
+    console.log(keywords);
+    const regex = new RegExp(keywords, "i"); // case-insensitive
+
     Location.find({
       $or: [
         { name: regex },
@@ -388,28 +389,28 @@ db.once('open', function () {
           eventCount: 0, // Placeholder for event count, to be updated later
           locationId: location._id, // Store the location's Object ID for reference
         }));
-  
+
         const promises = locationTableData.map((locationData) => {
           return Event.countDocuments({ loc: locationData.locationId })
             .then((eventCount) => {
               locationData.eventCount = eventCount;
             })
             .catch((error) => {
-              console.error('Error fetching event count:', error);
+              console.error("Error fetching event count:", error);
               locationData.eventCount = 0; // Set event count to 0 in case of an error
             });
         });
-  
+
         Promise.all(promises)
           .then(() => {
             res.json(locationTableData);
           })
           .catch((error) => {
-            console.error('Error fetching event count:', error);
+            console.error("Error fetching event count:", error);
           });
       })
       .catch((error) => {
-        console.error('Error handling search:', error);
+        console.error("Error handling search:", error);
       });
   });
 
