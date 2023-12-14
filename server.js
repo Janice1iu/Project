@@ -310,174 +310,87 @@ db.once('open', function () {
       });
   });
 
-  // Fetch events for a specific location
-  app.get('/lo/:locationID', async (req, res) => {
-    const locationID = req.params['locationID'];
-  
-    try {
-      // Lookup for the location with the locId provided
-      const location = await Location.findOne({ locId: locationID });
-  
-      if (!location) {
-        return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
-      }
-  
-      // Find all events associated with the location
-      const events = await Event.find({ loc: location._id });
-  
-      // Prepare the event details
-      const eventDetails = events.map((event) => ({
-        eventId: event.eventId,
-        title: event.title,
-        startDateTime: moment(event.startDateTime).tz(hkTimeZone).format(),
-        endDateTime: moment(event.endDateTime).tz(hkTimeZone).format(),
-        description: event.description,
-        presenter: event.presenter,
-        price: event.price,
-      }));
-  
-      // Generate the HTML table
-      let tableHtml = `
-        <table>
-          <thead>
-            <tr>
-              <th>Event Id</th>
-              <th>Title</th>
-              <th>Date/Time</th>
-              <th>Description</th>
-              <th>Presenter</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-      `;
-  
-      // Populate the table rows with event details
-      eventDetails.forEach((event) => {
-        tableHtml += `
-          <tr>
-            <td>${event.eventId}</td>
-            <td>${event.title}</td>
-            <td>${event.startDateTime} to ${event.endDateTime}</td>
-            <td>${event.description}</td>
-            <td>${event.presenter}</td>
-            <td>${event.price}</td>
-            </tr>
-            `;
-          });
-          
-          tableHtml += `
-          </tbody>
-          </table>
-          `;
-          
-          // Set the HTML content type and send the response
-          res.setHeader('Content-Type', 'text/html');
-          res.send(tableHtml);
-      } catch (error) {
-          console.error('Error fetching events:', error);
-      }
-  });
+// Fetch events for a specific location
+app.get('/lo/:locationID', async (req, res) => {
+  const locationID = req.params['locationID'];
 
+  try {
+    // Lookup for the location with the locId provided
+    const location = await Location.findOne({ locId: locationID });
 
-// handle login requests 
-// Both user and admin would login thru this endpoint
-// if the user is an admin, the return json field: "isAdmin" would be set to True
-
-// Input Json reqs
-// {
-//      "user": string, (username)
-//      "password": string, (encrypted password)  
-// }
-  app.post('/login', (req, res) => {
-    const user = req.body.user;
-    const password = req.body.password;
-    // double check empty fields
-    if(!user || !password){
-        res.status(401).send('Username or password empty')
+    if (!location) {
+      return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
     }
-    // query database
-    User.findOne({$and: [{username: {$eq: user}}, {password: {$eq: password}}]}).then((data) => {
-        if(data === null){
-            res.status(403).send('Incorrect username or password')
-        }else{
-            // valid username and password
-            // can check statuscode === 200 or json().valid
-            res.json({
-                'valid': true,
-                'isAdmin': data.isAdmin
-            }).send()
-        }
-    })
 
-  })
+    // Find all events associated with the location
+    const events = await Event.find({ loc: location._id });
 
+    // Prepare the event details
+    const eventDetails = events.map((event) => ({
+      eventId: event.eventId,
+      title: event.title,
+      startDateTime: moment(event.startDateTime).tz(hkTimeZone).format(),
+      endDateTime: moment(event.endDateTime).tz(hkTimeZone).format(),
+      description: event.description,
+      presenter: event.presenter,
+      price: event.price,
+    }));
 
-/*
-  Handle Admin Event Creation, part of the CRUD requirement
-  Input: note that while some field in the database on Event is optional, 
-         it should still be present in the Json body of this post request,
-         empty string "" can be used for them 
-  {
-    title: string,
-    locId: int,
-    starttime: string, (the dateformat is specified in the database schema, which is something like "2024-01-21T19:30:00")
-    endtime: string, (same as above)
-    recurring: string, (unknown use)
-    description: string,
-    presenter: string,
-    price: string
+    // Generate the HTML table
+    let tableHtml = `
+      <table>
+        <thead>
+          <tr>
+            <th>Event Id</th>
+            <th>Title</th>
+            <th>Date/Time</th>
+            <th>Description</th>
+            <th>Presenter</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    // Populate the table rows with event details
+    eventDetails.forEach((event) => {
+      tableHtml += `
+        <tr>
+          <td>${event.eventId}</td>
+          <td>${event.title}</td>
+          <td>${event.startDateTime} to ${event.endDateTime}</td>
+          <td>${event.description}</td>
+          <td>${event.presenter}</td>
+          <td>${event.price}</td>
+        </tr>
+      `;
+    });
+
+    tableHtml += `
+        </tbody>
+      </table>
+    `;
+
+    // Set the HTML content type and send the response
+    res.setHeader('Content-Type', 'text/html');
+    res.send(tableHtml);
+  } catch (error) {
+    console.error('Error fetching events:', error);
   }
-*/
-  app.post('/newEvent', (req, res) => {
-    const title = req.body.title
-    const locId = req.body.locId
-    // the datetime conversion and format are specified by the database schema
-    const startDate = new Date(moment.tz(req.body.starttime, hkTimeZone).toDate())
-    const endDate =  new Date(moment.tz(req.body.endtime, hkTimeZone).toDate())
-    const recurring = req.body.recurring
-    const description = req.body.description
-    const presenter = req.body.presenter
-    const price = req.body.price
-    // query location data to get a reference to it
-    let maxId;
-    Event.find({}).sort({eventId: -1}).limit(1).then((eventData) => {
-        maxId = eventData[0].eventId + 1;
-        // console.log(maxId)
-    })
-    Location.findOne({LocId: {$eq: locId}}).then((locationData) => {
-        if(locationData === null){
-            res.statusCode(404).contentType('text/plain').send("Location ID not found.")
-        }else{
-            new Event({
-                eventId: maxId,
-                title: title,
-                loc: locationData,
-                startDateTime: startDate,
-                endDateTime: endDate,
-                recurringPattern: recurring,
-                description: description,
-                presenter: presenter,
-                price: price
-            }).save()
-            res.send('created!')
-        }
-    })
-})
-
+});
 
 /*app.get('/lo/:locationID', async (req, res) => {
-    const locationID = req.params['locationID'];
-    
-    try {
-        // Lookup for the location with the locId provided
-        const location = await Location.findOne({ locId: locationID });
-        
-        if (!location) {
-            return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
-        }
-        
-        // Find all events associated with the location
+  const locationID = req.params['locationID'];
+
+  try {
+    // Lookup for the location with the locId provided
+    const location = await Location.findOne({ locId: locationID });
+
+    if (!location) {
+      return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
+    }
+
+    // Find all events associated with the location
     const events = await Event.find({ loc: location._id });
 
     // Prepare the event details
@@ -506,9 +419,8 @@ db.once('open', function () {
   app.all('/*', (req, res) => {
     res.send('Hello World!');
   });
-
+    
 })
-
-
+    
 // listen to port 3000
 const server = app.listen(3000);  
