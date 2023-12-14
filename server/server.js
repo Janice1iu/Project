@@ -271,7 +271,7 @@ db.once('open', function () {
     */
 
   
-  // Fetch all locations (GET)
+  // Fetch all locations
   app.get('/lo', async (req, res) => {
     try {
       // Retrieve all locations from the database
