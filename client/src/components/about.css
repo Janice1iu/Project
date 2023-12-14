@@ -1,0 +1,67 @@
+@import url("https://fonts.cdnfonts.com/css/acapulco");
+.container {
+  background-color: #ffc107;
+  width: 100vw;
+  height: 100vh;
+}
+
+.title {
+  font-weight: 100;
+  font-size: 1.5rem;
+  font-family: "acapulco", sans-serif;
+}
+
+.keyword_bx {
+  background-color: rgba(228, 168, 240, 0.76);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 35vw;
+  height: 15vh;
+  padding-left: 20px;
+}
+
+.keyword_bx .search_box {
+  margin-bottom: 10px;
+}
+
+.keyword_bx input {
+  text-align: center;
+}
+.result_bx {
+  display: flex;
+  background-color: rgb(136, 175, 201);
+  width: 85vw;
+  height: 65vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-table {
+  border-collapse: collapse;
+  width: 95%;
+  margin: auto;
+}
+
+.result-table th,
+.result-table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.result-table th {
+  background-color: #fcdb9d;
+  color: rgb(0, 0, 0);
+}
+
+.result-table td {
+  background-color: white;
+}
+
+.result-table td[id^="name-"],
+.result-table td[id^="link-"],
+.result-table td[id^="no-"] {
+  border: 1px solid #ddd;
+}
