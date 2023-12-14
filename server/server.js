@@ -310,7 +310,110 @@ db.once('open', function () {
       });
   });
 
-  //
+// Fetch events for a specific location
+app.get('/lo/:locationID', async (req, res) => {
+  const locationID = req.params['locationID'];
+
+  try {
+    // Lookup for the location with the locId provided
+    const location = await Location.findOne({ locId: locationID });
+
+    if (!location) {
+      return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
+    }
+
+    // Find all events associated with the location
+    const events = await Event.find({ loc: location._id });
+
+    // Prepare the event details
+    const eventDetails = events.map((event) => ({
+      eventId: event.eventId,
+      title: event.title,
+      startDateTime: moment(event.startDateTime).tz(hkTimeZone).format(),
+      endDateTime: moment(event.endDateTime).tz(hkTimeZone).format(),
+      description: event.description,
+      presenter: event.presenter,
+      price: event.price,
+    }));
+
+    // Generate the HTML table
+    let tableHtml = `
+      <table>
+        <thead>
+          <tr>
+            <th>Event Id</th>
+            <th>Title</th>
+            <th>Date/Time</th>
+            <th>Description</th>
+            <th>Presenter</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    // Populate the table rows with event details
+    eventDetails.forEach((event) => {
+      tableHtml += `
+        <tr>
+          <td>${event.eventId}</td>
+          <td>${event.title}</td>
+          <td>${event.startDateTime} to ${event.endDateTime}</td>
+          <td>${event.description}</td>
+          <td>${event.presenter}</td>
+          <td>${event.price}</td>
+        </tr>
+      `;
+    });
+
+    tableHtml += `
+        </tbody>
+      </table>
+    `;
+
+    // Set the HTML content type and send the response
+    res.setHeader('Content-Type', 'text/html');
+    res.send(tableHtml);
+  } catch (error) {
+    console.error('Error fetching events:', error);
+  }
+});
+
+/*app.get('/lo/:locationID', async (req, res) => {
+  const locationID = req.params['locationID'];
+
+  try {
+    // Lookup for the location with the locId provided
+    const location = await Location.findOne({ locId: locationID });
+
+    if (!location) {
+      return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
+    }
+
+    // Find all events associated with the location
+    const events = await Event.find({ loc: location._id });
+
+    // Prepare the event details
+    const eventDetails = events.map((event) => ({
+      eventId: event.eventId,
+      title: event.title,
+      loc: event.loc,
+      startDateTime: moment(event.startDateTime).tz(hkTimeZone).format(),
+      endDateTime: moment(event.endDateTime).tz(hkTimeZone).format(),
+      recurringPattern: event.recurringPattern,
+      description: event.description,
+      presenter: event.presenter,
+      price: event.price,
+    }));
+
+    // Send the event details as the response
+    res.json(eventDetails);
+  } catch (error) {
+    console.error('Error fetching events:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+*/
 
   // handle ALL requests with Hello World
   app.all('/*', (req, res) => {
