@@ -537,7 +537,8 @@ db.once('open', function () {
   
   // Fetch user's favourite locations
   app.get('/favourite', (req, res) => {
-    const username = "monty_python";
+    const username = "monty_python"; // Testing: Hong Kong City Hall, /lo/87510010, 3
+    // const { username } = req.query;
   
     User.findOne({ username })
       .exec()
