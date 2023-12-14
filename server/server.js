@@ -316,8 +316,32 @@ db.once('open', function () {
   app.all('/*', (req, res) => {
     res.send('Hello World!');
   });
-    
+
+//   handle login requests
+  app.post('/login', (req, res) => {
+    const user = req.body.user;
+    const password = req.body.password;
+    // double check empty fields
+    if(!user || !password){
+        res.status(401).send('Username or password empty')
+    }
+    // query database
+    User.findOne({$and: [{username: {$eq: user}}, {password: {$eq: password}}]}).then((data) => {
+        if(data === null){
+            res.status(403).send('Incorrect username or password')
+        }else{
+            // valid username and password
+            // can check statuscode === 200 or json().valid
+            res.json({
+                'valid': true,
+                'isAdmin': data.isAdmin
+            }).send()
+        }
+    })
+
+  })
 })
-    
+
+
 // listen to port 3000
 const server = app.listen(3000);  
