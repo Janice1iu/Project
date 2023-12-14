@@ -379,43 +379,6 @@ db.once('open', function () {
     }
   });
 
-
-/*app.get('/lo/:locationID', async (req, res) => {
-  const locationID = req.params['locationID'];
-
-  try {
-    // Lookup for the location with the locId provided
-    const location = await Location.findOne({ locId: locationID });
-
-    if (!location) {
-      return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
-    }
-
-    // Find all events associated with the location
-    const events = await Event.find({ loc: location._id });
-
-    // Prepare the event details
-    const eventDetails = events.map((event) => ({
-      eventId: event.eventId,
-      title: event.title,
-      loc: event.loc,
-      startDateTime: moment(event.startDateTime).tz(hkTimeZone).format(),
-      endDateTime: moment(event.endDateTime).tz(hkTimeZone).format(),
-      recurringPattern: event.recurringPattern,
-      description: event.description,
-      presenter: event.presenter,
-      price: event.price,
-    }));
-
-    // Send the event details as the response
-    res.json(eventDetails);
-  } catch (error) {
-    console.error('Error fetching events:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-*/
-
   // handle ALL requests with Hello World
   app.all('/*', (req, res) => {
     res.send('Hello World!');
