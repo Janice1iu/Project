@@ -282,19 +282,21 @@ db.once('open', function () {
           locationId: location._id, // Store the location's Object ID for reference
         }));
   
-        // Fetch the event count for each location
-        const eventCountPromises = locationTableData.map((location) =>
-          Event.countDocuments({ location: location.locationId })
-        );
-  
-        // Resolve all event count promises
-        Promise.all(eventCountPromises)
-          .then((eventCounts) => {
-            // Update the event count for each location
-            eventCounts.forEach((eventCount, index) => {
-              locationTableData[index].eventCount = eventCount;
+        // Fetch the event count for each location using promises
+        const promises = locationTableData.map((locationData) => {
+          return Event.countDocuments({ loc: locationData.locationId })
+            .then((eventCount) => {
+              locationData.eventCount = eventCount;
+            })
+            .catch((error) => {
+              console.error('Error fetching event count:', error);
+              locationData.eventCount = 0; // Set event count to 0 in case of an error
             });
+        });
   
+        // Wait for all promises to resolve
+        Promise.all(promises)
+          .then(() => {
             // Send the location table data as the response
             res.send(`
               <table>
@@ -322,17 +324,14 @@ db.once('open', function () {
             `);
           })
           .catch((error) => {
-            console.error('Error fetching event counts:', error);
-            res.status(500).send('Internal Server Error');
+            console.error('Error fetching event count:', error);
           });
       })
       .catch((error) => {
         console.error('Error fetching locations:', error);
-        res.status(500).send('Internal Server Error');
       });
   });
   
-
   // Fetch locations with specific keywords in name field 
   app.get('/keywords', (req, res) => {
     const { keywords } = req.query;
@@ -354,72 +353,76 @@ db.once('open', function () {
   });
 
   // Fetch events for a specific location
-  app.get('/lo/:locationID', async (req, res) => {
+  app.get('/lo/:locationID', (req, res) => {
     const locationID = req.params['locationID'];
   
-    try {
-      // Lookup for the location with the locId provided
-      const location = await Location.findOne({ locId: locationID });
+    Location.findOne({ locId: locationID })
+      .then((location) => {
+        if (!location) {
+          return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
+        }
   
-      if (!location) {
-        return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
-      }
+        Event.find({ loc: location._id })
+          .then((events) => {
+            // Prepare the event details
+            const eventDetails = events.map((event) => ({
+              eventId: event.eventId,
+              title: event.title,
+              startDateTime: moment(event.startDateTime).tz(hkTimeZone).format(),
+              endDateTime: moment(event.endDateTime).tz(hkTimeZone).format(),
+              description: event.description,
+              presenter: event.presenter,
+              price: event.price,
+            }));
   
-      // Find all events associated with the location
-      const events = await Event.find({ loc: location._id });
-  
-      // Prepare the event details
-      const eventDetails = events.map((event) => ({
-        eventId: event.eventId,
-        title: event.title,
-        startDateTime: moment(event.startDateTime).tz(hkTimeZone).format(),
-        endDateTime: moment(event.endDateTime).tz(hkTimeZone).format(),
-        description: event.description,
-        presenter: event.presenter,
-        price: event.price,
-      }));
-  
-      // Generate the HTML table
-      let tableHtml = `
-        <table>
-          <thead>
-            <tr>
-              <th>Event Id</th>
-              <th>Title</th>
-              <th>Date/Time</th>
-              <th>Description</th>
-              <th>Presenter</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-      `;
-  
-      // Populate the table rows with event details
-      eventDetails.forEach((event) => {
-        tableHtml += `
-          <tr>
-            <td>${event.eventId}</td>
-            <td>${event.title}</td>
-            <td>${event.startDateTime} to ${event.endDateTime}</td>
-            <td>${event.description}</td>
-            <td>${event.presenter}</td>
-            <td>${event.price}</td>
-            </tr>
+            // Generate the HTML table
+            let tableHtml = `
+              <table>
+                <thead>
+                  <tr>
+                    <th>Event Id</th>
+                    <th>Title</th>
+                    <th>Date/Time</th>
+                    <th>Description</th>
+                    <th>Presenter</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
             `;
+  
+            // Populate the table rows with event details
+            eventDetails.forEach((event) => {
+              tableHtml += `
+                <tr>
+                  <td>${event.eventId}</td>
+                  <td>${event.title}</td>
+                  <td>${event.startDateTime} to ${event.endDateTime}</td>
+                  <td>${event.description}</td>
+                  <td>${event.presenter}</td>
+                  <td>${event.price}</td>
+                </tr>
+              `;
+            });
+  
+            tableHtml += `
+              </tbody>
+              </table>
+            `;
+  
+            // Set the HTML content type and send the response
+            res.setHeader('Content-Type', 'text/html');
+            res.send(tableHtml);
+          })
+          .catch((error) => {
+            console.error('Error fetching events:', error);
+            res.status(500).send('Internal Server Error');
           });
-          
-          tableHtml += `
-          </tbody>
-          </table>
-          `;
-          
-          // Set the HTML content type and send the response
-          res.setHeader('Content-Type', 'text/html');
-          res.send(tableHtml);
-      } catch (error) {
-          console.error('Error fetching events:', error);
-      }
+      })
+      .catch((error) => {
+        console.error('Error fetching location:', error);
+        res.status(500).send('Internal Server Error');
+      });
   });
 
 
@@ -551,7 +554,6 @@ db.once('open', function () {
   });
 
 })
-
 
 // listen to port 3000
 const server = app.listen(3000);  
