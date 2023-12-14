@@ -1,16 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import LocationTable from './LocationTable';
+import Location from './Location';
 
 const App = () => {
-  return (
-    <Router>
-      <div>
-        {/* Other routes */}
-        <Route path="/lo" component={LocationTable} />
-      </div>
-    </Router>
-  );
+  const locationID = 7744; // Replace with your actual location ID
+
+  return <Location locationID={locationID} />;
 };
 
 export default App;
