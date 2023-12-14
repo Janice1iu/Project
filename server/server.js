@@ -450,37 +450,37 @@ db.once('open', function () {
   });
 
 
-// handle login requests 
-// Both user and admin would login thru this endpoint
-// if the user is an admin, the return json field: "isAdmin" would be set to True
+    // handle login requests 
+    // Both user and admin would login thru this endpoint
+    // if the user is an admin, the return json field: "isAdmin" would be set to True
 
-// Input Json reqs
-// {
-//      "user": string, (username)
-//      "password": string, (encrypted password)  
-// }
-  app.post('/login', (req, res) => {
-    const user = req.body.user;
-    const password = req.body.password;
-    // double check empty fields
-    if(!user || !password){
-        res.status(401).send('Username or password empty')
-    }
-    // query database
-    User.findOne({$and: [{username: {$eq: user}}, {password: {$eq: password}}]}).then((data) => {
-        if(data === null){
-            res.status(403).send('Incorrect username or password')
-        }else{
-            // valid username and password
-            // can check statuscode === 200 or json().valid
-            res.json({
-                'valid': true,
-                'isAdmin': data.isAdmin
-            }).send()
+    // Input Json reqs
+    // {
+    //      "user": string, (username)
+    //      "password": string, (encrypted password)  
+    // }
+    app.post('/login', (req, res) => {
+        const user = req.body.user;
+        const password = req.body.password;
+        // double check empty fields
+        if(!user || !password){
+            res.status(401).send('Username or password empty')
         }
-    })
+        // query database
+        User.findOne({$and: [{username: {$eq: user}}, {password: {$eq: password}}]}).then((data) => {
+            if(data === null){
+                res.status(403).send('Incorrect username or password')
+            }else{
+                // valid username and password
+                // can check statuscode === 200 or json().valid
+                res.json({
+                    'valid': true,
+                    'isAdmin': data.isAdmin
+                }).send()
+            }
+        })
 
-  })
+    })
 
 
 /*
@@ -499,41 +499,238 @@ db.once('open', function () {
     price: string
   }
 */
-  app.post('/newEvent', (req, res) => {
-    const title = req.body.title
-    const locId = req.body.locId
-    // the datetime conversion and format are specified by the database schema
-    const startDate = new Date(moment.tz(req.body.starttime, hkTimeZone).toDate())
-    const endDate =  new Date(moment.tz(req.body.endtime, hkTimeZone).toDate())
-    const recurring = req.body.recurring
-    const description = req.body.description
-    const presenter = req.body.presenter
-    const price = req.body.price
-    // query location data to get a reference to it
-    let maxId;
-    Event.find({}).sort({eventId: -1}).limit(1).then((eventData) => {
-        maxId = eventData[0].eventId + 1;
-        // console.log(maxId)
+    app.post('/newEvent', (req, res) => {
+        const title = req.body.title
+        const locId = req.body.locId
+        // the datetime conversion and format are specified by the database schema
+        const startDate = new Date(moment.tz(req.body.starttime, hkTimeZone).toDate())
+        const endDate =  new Date(moment.tz(req.body.endtime, hkTimeZone).toDate())
+        const recurring = req.body.recurring
+        const description = req.body.description
+        const presenter = req.body.presenter
+        const price = req.body.price
+        let maxId;
+        // get current largest id to determine the new id
+        Event.find({}).sort({eventId: -1}).limit(1).then((eventData) => {
+            maxId = eventData[0].eventId + 1;
+            // console.log(maxId)
+        })
+        // query location data to get a reference to it
+        Location.findOne({LocId: {$eq: locId}}).then((locationData) => {
+            if(locationData === null){
+                res.statusCode(404).contentType('text/plain').send("Location ID not found.")
+            }else{
+                new Event({
+                    eventId: maxId,
+                    title: title,
+                    loc: locationData,
+                    startDateTime: startDate,
+                    endDateTime: endDate,
+                    recurringPattern: recurring,
+                    description: description,
+                    presenter: presenter,
+                    price: price
+                }).save()
+                res.send('created!')
+            }
+        })
     })
-    Location.findOne({LocId: {$eq: locId}}).then((locationData) => {
-        if(locationData === null){
-            res.statusCode(404).contentType('text/plain').send("Location ID not found.")
-        }else{
-            new Event({
-                eventId: maxId,
-                title: title,
-                loc: locationData,
-                startDateTime: startDate,
-                endDateTime: endDate,
-                recurringPattern: recurring,
-                description: description,
-                presenter: presenter,
-                price: price
-            }).save()
-            res.send('created!')
+
+    /*
+    Handle Admin Event Update, part of the CRUD requirement
+    Input: note that while some field in the database on Event is optional, 
+            it should still be present in the Json body of this post request,
+            empty string "" can be used for them 
+    {
+        eventId: int, (this is the filter used to identify the event)
+        title: string,
+        locId: int,
+        starttime: string, (the dateformat is specified in the database schema, which is something like "2024-01-21T19:30:00")
+        endtime: string, (same as above)
+        recurring: string, (unknown use)
+        description: string,
+        presenter: string,
+        price: string
+    }
+    */
+    app.post('/updateEvent', (req, res) => {
+        const eventId = req.body.eventId
+        const title = req.body.title
+        const locId = req.body.locId
+        // the datetime conversion and format are specified by the database schema
+        const startDate = new Date(moment.tz(req.body.starttime, hkTimeZone).toDate())
+        const endDate =  new Date(moment.tz(req.body.endtime, hkTimeZone).toDate())
+        const recurring = req.body.recurring
+        const description = req.body.description
+        const presenter = req.body.presenter
+        const price = req.body.price
+        
+        Location.findOne({locId: {$eq: locId}}).then((locationData) => {
+            if(locationData === null){
+                res.status(404).send("Location ID not found.")
+            }
+            Event.findOneAndUpdate(
+                {eventId: {$eq: eventId}}, 
+                {
+                    title: title, 
+                    loc: locationData, 
+                    startDateTime: startDate,
+                    endDateTime: endDate,
+                    recurringPattern: recurring,
+                    description: description,
+                    presenter: presenter,
+                    price: price
+                },
+                {new: true})
+                .then((EventData) => {
+                    if(eventData === null){
+                        res.status(404).send("Event ID not found")
+                    }
+                    res.json(EventData).send()
+            })
+        })
+    })
+
+
+    /*
+    Handle Admin Event Deletion, part of the CRUD requirement
+    {
+        eventId: int, (specify the event to be deleted)
+    }
+    */
+    app.post('/deleteEvent', (req, res) => {
+        const eventId = req.body.eventId
+        Event.findOneAndDelete({eventId: {$eq: eventId}}).then((data) => {
+            if(data === null){
+                res.status(404).send('event ID not found')
+            }else{
+                res.send('ok')
+            }
+        })
+    })
+
+    /*
+    Handle Admin User Creation, part of the CRUD requirement
+    input:
+    {
+        username: string, (server would check if this is unqiue, 409 is returned if not)
+        password: string, (encrypted password),
+        isAdmin: boolean
+    }
+    */
+    app.post('/newUser', (req, res) => {
+        const username = req.body.username
+        const password = req.body.password
+        const isAdmin = req.body.isAdmin
+
+        // check if username is taken
+        User.findOne({username: {$eq: username}}).then((data) => {
+            if(!data === null){
+                res.status(409).send('username taken')
+            }
+            // create new user
+            new User({
+                username: username,
+                password: password,
+                isAdmin: isAdmin
+            }).save().then((newUser) => {
+                // create new UserAccount (dk whats this for)
+                new UserAccount({
+                    user: newUser
+                }).save()
+            })
+        })
+        
+
+    })
+
+    /*
+    Handle Admin User update, part of the CRUD requirement
+    input: if there is no change to username and password, empty string "" or falsy object can be passed
+           However, "oldUsername" and "isAdmin" must be passed correctly
+    {
+        oldUsername: string, (this must be the same as the one before changes)
+        username: string,
+        password: string, (encrypted password),
+        isAdmin: boolean
+    }
+    */
+    app.post('updateUser', (req, res) => {
+        const oldUsername = req.body.oldUsername
+        const username = req.body.username
+        const password = req.body.password
+        const isAdmin = req.body.isAdmin
+        User.findOne({username: {$eq: oldUsername}}).then((data) => {
+            if(data === null){
+                res.status(404).send('username not found')
+            }
+
+            if(username === "" || username){
+                data.username = username
+            }
+            if(password === "" || password){
+                data.password = password
+            }
+            data.isAdmin = isAdmin
+            data.save().then((data) => {
+                res.send('ok')
+            })
+        })
+    })
+
+    /*
+    Handle Admin User delete, part of the CRUD requirement
+    {
+        username: string,
+    }
+    */
+    app.post('deleteUSer', (req, res) => {
+        const username = req.body.username
+        User.findOneAndDelete({username: {$eq: username}}).then((data) => {
+            if(data === null){
+                res.status(404).send('username not found')
+            }else{
+                res.send('ok')
+            }
+        })
+
+    })
+
+/*app.get('/lo/:locationID', async (req, res) => {
+    const locationID = req.params['locationID'];
+    
+    try {
+        // Lookup for the location with the locId provided
+        const location = await Location.findOne({ locId: locationID });
+        
+        if (!location) {
+            return res.status(404).send('Location not found.'); // Output error message in response body with status code 404
         }
-    })
-})
+        
+        // Find all events associated with the location
+    const events = await Event.find({ loc: location._id });
+
+    // Prepare the event details
+    const eventDetails = events.map((event) => ({
+      eventId: event.eventId,
+      title: event.title,
+      loc: event.loc,
+      startDateTime: moment(event.startDateTime).tz(hkTimeZone).format(),
+      endDateTime: moment(event.endDateTime).tz(hkTimeZone).format(),
+      recurringPattern: event.recurringPattern,
+      description: event.description,
+      presenter: event.presenter,
+      price: event.price,
+    }));
+
+    // Send the event details as the response
+    res.json(eventDetails);
+  } catch (error) {
+    console.error('Error fetching events:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+*/
 
   // handle ALL requests with Hello World
   app.all('/*', (req, res) => {
