@@ -271,7 +271,7 @@ db.once('open', function () {
     */
 
   
-  // Fetch all locations
+  // Fetch all locations (GET)
   app.get('/lo', async (req, res) => {
     try {
       // Retrieve all locations from the database
@@ -300,4 +300,4 @@ db.once('open', function () {
 })
     
 // listen to port 3000
-const server = app.listen(3000);
+const server = app.listen(3000);  
