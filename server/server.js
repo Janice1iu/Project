@@ -412,6 +412,9 @@ db.once('open', function () {
   });
 
   // Fetch events for a specific location
+  // Response: Generate a HTML table for testing purpose only!
+  /* Client side implementation required: 
+  a table showing event details on top of /lo/:locationID */
   app.get('/lo/:locationID', (req, res) => {
     const locationID = req.params['locationID'];
   
@@ -475,16 +478,16 @@ db.once('open', function () {
           })
           .catch((error) => {
             console.error('Error fetching events:', error);
-            res.status(500).send('Internal Server Error');
           });
       })
       .catch((error) => {
         console.error('Error fetching location:', error);
-        res.status(500).send('Internal Server Error');
       });
   });
 
   // Handle submission of user comments
+  /* Client side implementation required: 
+  a comment section on the bottom of /lo/:locationID */
   app.post('/lo/:locationID/comments', (req, res) => {
     const locationID = req.params.locationID;
     const { username, content } = req.body;
@@ -528,7 +531,7 @@ db.once('open', function () {
         console.error('Error finding location:', error);
       });
   });
-  
+
 
     // handle login requests 
     // Both user and admin would login thru this endpoint
