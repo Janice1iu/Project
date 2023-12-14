@@ -57,4 +57,94 @@
     ]
   },
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b0c189988876b6f60c519"
+  },
+  "locId": 56,
+  "name": "Chai Wan Public Library",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.263428,
+      114.240078
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b918c9988876b6f60c54d"
+  },
+  "locId": 93,
+  "name": "Shun Lee Estate Public Library",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.330194,
+      114.225277
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b91db9988876b6f60c54e"
+  },
+  "locId": 87810779,
+  "name": "Sheung Wan Civic Centre (Art Studios (1) & (2))",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.28602,
+      114.14967
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b924d9988876b6f60c54f"
+  },
+  "locId": 6824,
+  "name": "Hong Kong Coliseum (Arena)",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.301315,
+      114.182013
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b92ab9988876b6f60c550"
+  },
+  "locId": 50110015,
+  "name": "Hong Kong Cultural Centre (Grand Theatre)",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.29386,
+      114.17053
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b935b9988876b6f60c551"
+  },
+  "locId": 8262,
+  "name": "K11 Art House",
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [
+      22.294408,
+      114.174395
+    ]
+  },
+  "__v": 0
 }]
