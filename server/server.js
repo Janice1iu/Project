@@ -579,6 +579,49 @@ db.once('open', function () {
         console.error('Error finding user or user account:', err);
       });
   });
+
+  // Fetch coordinates of all locations
+  app.get("/coordinates", (req, res) => {
+    Location.find({})
+        .then(locations => {
+            const coordinates = locations.map(location => location.coordinates.coordinates);
+            res.json(coordinates);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).send("Error occurred while fetching locations.");
+        });
+  });
+
+  app.get("/events", async (req, res) => {
+    try {
+        if (req.query.price) {
+            const queryPrice = parseFloat(req.query.price);
+            const events = await Event.find({});
+            const filteredEvents = events.filter(event => {
+              let eventPrice = 0;
+              if (event.price !== "Free Admission") {
+                  eventPrice = parseFloat(event.price.replace('$', ''));
+              }
+              return eventPrice <= queryPrice;
+          });
+            const eventsData = filteredEvents.map(event => ({
+                "eventId": event.eventId,
+                "title": event.title,
+                "price": event.price
+            }));
+            res.setHeader('Content-Type', 'text/plain');
+            res.send(JSON.stringify(eventsData, null, 2));
+        } else {
+            const events = await Event.find({});
+            res.json(events);
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("An error occurred while fetching events.");
+    }
+  });
+  
   
 
     // handle login requests 
