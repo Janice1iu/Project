@@ -2,7 +2,7 @@ import React from "react";
 import ListOfEvents from "./ListOfEvents.jsx";
 import Comments from "./Comments.jsx";
 
-const Map = () => {
+const CityHall = () => {
 
     return (
         <div>
@@ -23,4 +23,4 @@ const Map = () => {
     )
 }
 
-export default Map;
+export default CityHall;
