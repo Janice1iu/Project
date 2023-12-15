@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "657a371b6cd0431e20193065"
+  },
+  "username": "monty_python",
+  "password": "password1234",
+  "isAdmin": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a380b9988876b6f60c50f"
+  },
+  "username": "admin_moj",
+  "password": "password8888",
+  "isAdmin": true,
+  "__v": 0
+}]

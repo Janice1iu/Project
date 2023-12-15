@@ -106,7 +106,7 @@ db.once('open', function () {
     }, 
     description: {
       type: String,
-      default: "", // Optional, set a default empty string if description is not provided
+      default: "", // Optional
     },
     presenter: {
       type: String,
@@ -593,6 +593,7 @@ db.once('open', function () {
         });
   });
 
+  // Fetch all events for all locations 
   app.get("/events", async (req, res) => {
     try {
         if (req.query.price) {

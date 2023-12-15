@@ -13,10 +13,10 @@
   "endDateTime": {
     "$date": "2023-12-28T06:00:00.000Z"
   },
-  "recurringPattern": "Every Thu",
+  "recurringPattern": "Thu",
   "description": "For details, contact 6460 2161",
   "presenter": "Hang Fei Music Centre",
-  "price": "Admission by Enrolment",
+  "price": "Admission by Enrollment",
   "__v": 0
 },
 {
@@ -164,5 +164,530 @@
   "description": "Only for age 4 or above",
   "presenter": "Adventure Harmonica Music Centre",
   "price": "$150",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b0d799988876b6f60c523"
+  },
+  "eventId": 155906,
+  "title": "Introduction to Library Catalogue/ Internet & Electronic Resources (Adult)",
+  "loc": {
+    "$oid": "657b0c189988876b6f60c519"
+  },
+  "startDateTime": {
+    "$date": "2023-12-01T09:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-01T10:00:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details: contact 2921 5055",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free Admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b0e339988876b6f60c529"
+  },
+  "eventId": 155899,
+  "title": "Roving Exhibition on the Winning Entries of the 33rd Chinese Poetry Writing Competition 2023",
+  "loc": {
+    "$oid": "657b0c189988876b6f60c519"
+  },
+  "startDateTime": {
+    "$date": "2023-12-01T00:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-28T11:59:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details: contact 2921 5055",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free Admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b10bc9988876b6f60c52a"
+  },
+  "eventId": 155900,
+  "title": "Book Display – Parenting Tips",
+  "loc": {
+    "$oid": "657b0c189988876b6f60c519"
+  },
+  "startDateTime": {
+    "$date": "2023-12-01T00:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-31T11:59:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details: contact 2921 5055",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free Admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b11319988876b6f60c52b"
+  },
+  "eventId": 155907,
+  "title": "Introduction to Library Catalogue/ Internet & Electronic Resources (Junior)",
+  "loc": {
+    "$oid": "657b0c189988876b6f60c519"
+  },
+  "startDateTime": {
+    "$date": "2023-12-08T09:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-08T10:00:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details: contact 2921 5055",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free Admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b11989988876b6f60c52c"
+  },
+  "eventId": 155902,
+  "title": "Storytelling for Children",
+  "loc": {
+    "$oid": "657b0c189988876b6f60c519"
+  },
+  "startDateTime": {
+    "$date": "2023-12-02T06:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-02T07:00:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details: contact 2921 5055",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free Admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b131e9988876b6f60c530"
+  },
+  "eventId": 154881,
+  "title": "Cheers! Series: Sweetyland III A Whistle of Dreams by Make Friends With Puppet",
+  "loc": {
+    "$oid": "6579e4227d5c9f57d8b7dcd3"
+  },
+  "startDateTime": {
+    "$date": "2023-12-15T11:45:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-15T12:55:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, please refer to the facebook page of the presenter",
+  "presenter": "Make Friends With Puppet",
+  "price": "$240",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b13a59988876b6f60c531"
+  },
+  "eventId": 155801,
+  "title": "Cantonese Operatic Songs Concert",
+  "loc": {
+    "$oid": "6579e4227d5c9f57d8b7dcd3"
+  },
+  "startDateTime": {
+    "$date": "2024-01-23T06:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-23T09:30:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "Only for age 6 or above",
+  "presenter": "Art Forum",
+  "price": "Free admission by tickets",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c2b219988876b6f60c556"
+  },
+  "eventId": 156093,
+  "title": "Book Display – Information Technology Knowledge",
+  "loc": {
+    "$oid": "657b918c9988876b6f60c54d"
+  },
+  "startDateTime": {
+    "$date": "2023-01-01T00:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-01-31T11:59:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, contact 29273155",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c2b9f9988876b6f60c557"
+  },
+  "eventId": 156094,
+  "title": "Children’s Book Display – Festivals and Customs",
+  "loc": {
+    "$oid": "657b918c9988876b6f60c54d"
+  },
+  "startDateTime": {
+    "$date": "2023-12-01T00:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-31T11:59:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, contact 29273155",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c2c559988876b6f60c558"
+  },
+  "eventId": 156097,
+  "title": "Introduction to Library Catalogue / Internet & Electronic Resources (Junior)",
+  "loc": {
+    "$oid": "657b918c9988876b6f60c54d"
+  },
+  "startDateTime": {
+    "$date": "2023-12-19T09:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-19T10:00:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, contact 29273155",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c2cfd9988876b6f60c559"
+  },
+  "eventId": 156095,
+  "title": "Storytelling for Children",
+  "loc": {
+    "$oid": "657b918c9988876b6f60c54d"
+  },
+  "startDateTime": {
+    "$date": "2023-12-03T03:30:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-03T04:30:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, contact 29273155",
+  "presenter": "Hong Kong Public Libraries (LCSD)",
+  "price": "Free admission",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c2deb9988876b6f60c55c"
+  },
+  "eventId": 154845,
+  "title": "Suyichuan Chinese Calligraphy 2024",
+  "loc": {
+    "$oid": "657b91db9988876b6f60c54e"
+  },
+  "startDateTime": {
+    "$date": "2024-02-01T10:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-06-27T11:00:00.000Z"
+  },
+  "recurringPattern": "Thu",
+  "description": "No Age Limit",
+  "presenter": "Su Yi Chuan Calligraphy Association of Hong Kong",
+  "price": "$100",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c50b50e2a6a7deae0e114"
+  },
+  "eventId": 155661,
+  "title": "Chinese Calligraphy Class",
+  "loc": {
+    "$oid": "657b91db9988876b6f60c54e"
+  },
+  "startDateTime": {
+    "$date": "2024-01-14T02:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-14T04:00:00.000Z"
+  },
+  "recurringPattern": "Sun",
+  "description": "Only for Age 18 or above",
+  "presenter": "Hong Kong Fairy's Pond Calligraphy Association",
+  "price": "$600",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c51be0e2a6a7deae0e117"
+  },
+  "eventId": 155662,
+  "title": "Oil Painting Class by Arnold Yu's Art Club",
+  "loc": {
+    "$oid": "657b91db9988876b6f60c54e"
+  },
+  "startDateTime": {
+    "$date": "2024-01-02T01:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-02T04:00:00.000Z"
+  },
+  "recurringPattern": "Tue",
+  "description": "Only for Age 18 or above",
+  "presenter": "Arnold Yu's Art Club",
+  "price": "$400",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c532c0e2a6a7deae0e11a"
+  },
+  "eventId": 154859,
+  "title": "FWD Insurance 10th Anniversary Presents : Jacky Cheung 60+ Concert Tour Hong Kong",
+  "loc": {
+    "$oid": "657b924d9988876b6f60c54f"
+  },
+  "startDateTime": {
+    "$date": "2023-12-13T12:15:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-13T14:45:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "There will be no counter booking. Only internet, mobile app and telephone bookings are available.Each ticket admits one person only (including infant). 36 wheelchair seats, each accompanied with one optional minder seat are available for each performance of the event.",
+  "presenter": "Harbour Well Development Limited",
+  "price": "$580, $980, $1290",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c53d80e2a6a7deae0e11b"
+  },
+  "eventId": 155030,
+  "title": "FWD Insurance 10th Anniversary Presents : Jacky Cheung 60+ Concert Tour Hong Kong (Additional Performances)",
+  "loc": {
+    "$oid": "657b924d9988876b6f60c54f"
+  },
+  "startDateTime": {
+    "$date": "2023-12-28T12:15:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-28T14:15:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "There will be no counter booking. Only internet, mobile app and telephone bookings are available.Each ticket admits one person only (including infant). 36 wheelchair seats, each accompanied with one optional minder seat are available for each performance of the event.",
+  "presenter": "Harbour Well Development Limited",
+  "price": "$580, $980, $1290",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c54b80e2a6a7deae0e11c"
+  },
+  "eventId": 155759,
+  "title": "TWINS SPIRIT SINCE 2001 LIVE IN HONG KONG",
+  "loc": {
+    "$oid": "657b924d9988876b6f60c54f"
+  },
+  "startDateTime": {
+    "$date": "2024-01-21T12:15:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-10-21T14:45:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "There will be no counter booking. Only internet, mobile app and credit card telephone bookings are available.Each ticket admits one person only (including infant). 64 wheelchair seats, each accompanied with one optional minder seat are available for each performance of the event.",
+  "presenter": "Emperor Entertainment (Hong Kong) Limited",
+  "price": "$480, $680, $880, $1080",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c561b0e2a6a7deae0e11f"
+  },
+  "eventId": 155675,
+  "title": "National Ballet of China Red Detachment of Women",
+  "loc": {
+    "$oid": "657b92ab9988876b6f60c550"
+  },
+  "startDateTime": {
+    "$date": "2024-01-10T11:30:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-10T13:55:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, contact 2856 0149",
+  "presenter": "CPAA PRODUCTIONS LTD",
+  "price": "$180, $380, $580, $780, $1200",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c570f0e2a6a7deae0e120"
+  },
+  "eventId": 154974,
+  "title": "The Nutcracker",
+  "loc": {
+    "$oid": "657b92ab9988876b6f60c550"
+  },
+  "startDateTime": {
+    "$date": "2023-12-30T06:30:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-12-30T08:30:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, contact 2105 9724",
+  "presenter": "The Hong Kong Ballet Limited",
+  "price": "$220, $340, $490, $720, $1200",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c57ce0e2a6a7deae0e121"
+  },
+  "eventId": 156468,
+  "title": "THE HONG KONG JOCKEY CLUB SERIES:BAYERISCHE STAATSOPER(BAVARIAN STATE OPERA)-RICHARD STRAUSS' ARIADNE AUF NAXOS",
+  "loc": {
+    "$oid": "657b92ab9988876b6f60c550"
+  },
+  "startDateTime": {
+    "$date": "2024-02-22T11:30:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-02-22T13:45:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "For details, contact 2824 2430",
+  "presenter": "HONG KONG ARTS FESTIVAL SOCIETY LIMITED",
+  "price": "$300, $440, $600, $780, $980, $1180",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c59030e2a6a7deae0e124"
+  },
+  "eventId": 155813,
+  "title": "2001: A Space Odyssey (4K Restored Version) - !magine Fest",
+  "loc": {
+    "$oid": "657b935b9988876b6f60c551"
+  },
+  "startDateTime": {
+    "$date": "2024-01-06T07:30:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-06T09:59:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "As Strauss’s symphonic poem Also sprach Zarathustra opens the film, apes are seen living a raw life in the prehistoric times. Suddenly a monolith appears, triggering us to ask, if this is ground zero of humankind evolution? Fast-forwarding to the era of space travelling, a spacecraft is seen propelling into the vast universe, embarking on an exploration accompanied by The Blue Danube. The mysterious monolith then reappears on the Moon, sending signals to Jupiter. To unlock the mystery, the five-men crew switches gears and heads to Jupiter, however, as the supercomputer HAL 9000 pilots the ship, a malfunction brings the astronauts into an unprecedented crisis. For this epochal sci-fi masterpiece of immense imagination, Kubrick worked with sci-fi novelist Arthur C. Clarke to create a voyage beginning with our prehistoric ape-ancestry past, and leaping into the future with the birth of the Starchild — an ultimate reflection on human evolution and existence. Then through an episode of computer mutiny to interrogate the encroaching dominance and threat of technologies towards mankind. The vision of the story is profoundly magnificent. The film was produced when computer-generated imagery (CGI) did not exist, nevertheless, the visuals were stunningly outstanding back then, and are still breathtaking as of today.",
+  "presenter": "Leisure and Cultural Services Department",
+  "price": "$130",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c5a370e2a6a7deae0e125"
+  },
+  "eventId": 155816,
+  "title": "AfterLife - !magine Fest",
+  "loc": {
+    "$oid": "657b935b9988876b6f60c551"
+  },
+  "startDateTime": {
+    "$date": "2024-01-06T11:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-06T12:58:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "We need you to select one memory that was most meaningful or precious to you.” There is a station between earth and heaven, and the deceased are granted a seven-day window here. Mochizuki and Shiori work for the station, and are busy collecting precious memories from the newly deceased, which will be made into a video. Once the videos are shown on the sixth day, the souls will depart for heaven with their selected memory. One remembers eating onigiris with their parents in the bamboo forest after a massive earthquake happened in their childhood, one recalls themselves flying a plane through the clouds during aviation training, and one struggles to choose the most meaningful memory before due. To Mochizuki and Shiori, this seven-day experience is the most valuable to them. A signature work by Hirokazu Kore-eda filled with lingering poetic visuals, leaving audience to ponder on death and departure from a different perspective. Before shooting, the production team interviewed 500 people in various locations, and selected 10 of them for cameos to talk about their real memories. The film is therefore a marriage of fiction and facts. Though the story belongs to the fantasy genre, it strongly illustrates a sense of everyday life. The video recording of memories resembles the shooting of a film, which act as Kore-eda’s tribute towards filmmakers. Viewers may cross reference the film with A Matter of Life and Death to read into the idea of facing death. Post-screening talk in Cantonese Speaker: Cheuk Cheung │ Host: Ernest Chan",
+  "presenter": "Leisure and Cultural Services Department",
+  "price": "$110",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c5ad80e2a6a7deae0e126"
+  },
+  "eventId": 155820,
+  "title": "ExMachina (4K Restored Version) - !magine Fest",
+  "loc": {
+    "$oid": "657b935b9988876b6f60c551"
+  },
+  "startDateTime": {
+    "$date": "2024-01-05T11:40:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2024-01-05T13:28:00.000Z"
+  },
+  "recurringPattern": "",
+  "description": "Caleb Smith, a programmer at a huge internet company, wins a staff lottery that gives him the chance to spend a week at the private mountain estate of the CEO, Nathan Bateman. The estate turns out to be a secret scientific research base, installed with an advanced artificial intelligence security system. Bateman has built a beautiful humanoid robot named Ava, and Caleb has been chosen to be the human component in a Turing test to determine whether she possesses human emotions and thinking, and if she can confuse Caleb with her capabilities that she might actually be a real person. To Caleb’s surprise, he slowly starts to sympathise Ava, and even begin plotting her escape. Debut of British director Alex Garland, the film unveils the discomfort and distrust of human beings towards AI technologies through its psychological thriller plot design, as the conflicts and struggles within the enclosed estate fuel the dramas with secrets, tests, and lies. Ava was set to be a female, resembling the femme fatale in classic film noir; while Bateman’s decision to build a lady robot serves to reflect the delusion of men’s objectification of female, and discusses the awakening of female’s self-awareness.",
+  "presenter": "Leisure and Cultural Services Department",
+  "price": "$110",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c5ba10e2a6a7deae0e129"
+  },
+  "eventId": 151296,
+  "title": "Cantonese Opera Training Class - Presented by Melody Cantonese Opera Laboratory",
+  "loc": {
+    "$oid": "6579c6f6049175f2362a6252"
+  },
+  "startDateTime": {
+    "$date": "2023-07-07T04:00:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-07-07T06:00:00.000Z"
+  },
+  "recurringPattern": "Fri",
+  "description": "For details, contact 9085 1524",
+  "presenter": "Melody Cantonese Opera Laboratory",
+  "price": "Admission by Enrollment",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657c5c530e2a6a7deae0e12a"
+  },
+  "eventId": 151256,
+  "title": "Cantonese Operatic Song Workshop- Presented by Edelweiss Chinese Musical Art Workshop",
+  "loc": {
+    "$oid": "6579c6f6049175f2362a6252"
+  },
+  "startDateTime": {
+    "$date": "2023-07-03T06:30:00.000Z"
+  },
+  "endDateTime": {
+    "$date": "2023-07-03T08:30:00.000Z"
+  },
+  "recurringPattern": "Mon",
+  "description": "For details, contact 2730 8207/ 9571 7626",
+  "presenter": "Edelweiss Chinese Musical Art Workshop",
+  "price": "Free admission",
   "__v": 0
 }]

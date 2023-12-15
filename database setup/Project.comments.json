@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "657a371b6cd0431e20193066"
+  },
+  "user": {
+    "$oid": "657a371b6cd0431e20193065"
+  },
+  "location": {
+    "$oid": "6579de61fda3eeec704b2325"
+  },
+  "content": "This place is lovely!",
+  "createdAt": {
+    "$date": "2023-12-13T22:58:35.317Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b6419684fe630f2a33da6"
+  },
+  "user": {
+    "$oid": "657a371b6cd0431e20193065"
+  },
+  "location": {
+    "$oid": "6579d6e238b01319dfc255ae"
+  },
+  "content": "Good!",
+  "createdAt": {
+    "$date": "2023-12-14T20:22:49.568Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b6481cdd3fb0a0a32062f"
+  },
+  "user": {
+    "$oid": "657a380b9988876b6f60c50f"
+  },
+  "location": {
+    "$oid": "6579d6e238b01319dfc255ae"
+  },
+  "content": "wow",
+  "createdAt": {
+    "$date": "2023-12-14T20:24:33.696Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b65994e5cb60c1cf6fd3a"
+  },
+  "user": {
+    "$oid": "657a380b9988876b6f60c50f"
+  },
+  "location": {
+    "$oid": "6579d6e238b01319dfc255ae"
+  },
+  "content": "A typical library. ",
+  "createdAt": {
+    "$date": "2023-12-14T20:29:13.211Z"
+  },
+  "__v": 0
+}]
